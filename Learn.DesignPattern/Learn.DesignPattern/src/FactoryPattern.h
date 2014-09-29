@@ -30,6 +30,22 @@ public:
 	inline void show(){ cout << "SingleCore B" << endl;}
 };
 
+class MultiCore      
+{    
+public:    
+	virtual void Show() = 0;  
+};    
+class MultiCoreA : public MultiCore      
+{    
+public:    
+	void Show() { cout<<"Multi Core A"<<endl; }    
+
+};    
+class MultiCoreB : public MultiCore      
+{    
+public:    
+	void Show() { cout<<"Multi Core B"<<endl; }    
+};
 
 /************************************************************************/
 /*                                Factory                               */
@@ -39,23 +55,21 @@ class SimpleFactory
 {
 public:
 	SingleCore *createSingleCore(enum CoreType t)
-	{
-		if(t == CORE_A)
+	{		
+		switch (t)
 		{
+		case CORE_A:
 			return new SingleCoreA();
-		}
-
-		if(t == CORE_A)
-		{
+		case CORE_B:
 			return new SingleCoreB();
+		default:
+			return NULL;
 		}
-
-		return NULL;
 	};
 };
 
 
-class CommonFactoryA : public SimpleFactory
+class CommonFactoryA 
 {
 public:
 	SingleCore *createSingleCore()
@@ -64,7 +78,7 @@ public:
 	};
 };
 
-class CommonFactoryB : public SimpleFactory
+class CommonFactoryB
 {
 public:
 	SingleCore *createSingleCore()
@@ -73,3 +87,38 @@ public:
 	};
 };
 
+
+class AbstractFactory
+{
+public:
+	virtual SingleCore *createSingleCore() = 0;
+	virtual MultiCore *createMultiCore() = 0;
+};
+
+class AbstractFactoryA : AbstractFactory
+{
+public:
+	SingleCore *createSingleCore() override
+	{
+		return new SingleCoreA();
+	}
+
+	MultiCore *createMultiCore() override
+	{
+		return new MultiCoreA();
+	}
+};
+
+class AbstractFactoryB : AbstractFactory
+{
+public:
+	SingleCore *createSingleCore() override
+	{
+		return new SingleCoreB();
+	}
+
+	MultiCore *createMultiCore() override
+	{
+		return new MultiCoreB();
+	}
+};
