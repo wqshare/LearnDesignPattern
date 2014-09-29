@@ -12,10 +12,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FactoryPattern.h" />
+    <ClInclude Include="src\StrategyPattern.h" />
+    <ClInclude Include="src\test\test.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\FactoryPattern.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\StrategyPattern.cpp" />
+    <ClCompile Include="src\test\unit_test.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{07777113-5EB2-4FE1-867C-51B142A37754}</ProjectGuid>
@@ -50,10 +54,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>

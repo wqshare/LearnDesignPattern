@@ -13,9 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="UnitTest">
+      <UniqueIdentifier>{f429aeec-4622-4da2-849c-cf37c90ddd13}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FactoryPattern.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test\test.h">
+      <Filter>UnitTest</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StrategyPattern.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -24,6 +33,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\unit_test.cpp">
+      <Filter>UnitTest</Filter>
+    </ClCompile>
+    <ClCompile Include="src\StrategyPattern.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
