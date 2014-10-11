@@ -22,6 +22,7 @@ class SingleCoreA : public SingleCore
 {
 public:
 	inline void show(){ cout << "SingleCore A" << endl;}
+	static void foo(){cout << "sdfsdgsdg " << endl;}
 };
 
 class SingleCoreB : public SingleCore

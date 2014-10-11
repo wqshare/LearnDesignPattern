@@ -85,7 +85,7 @@ private:
 
 class ComputerA : public BaseComputer
 {
-
+	
 };
 
 class ComputerB : public BaseComputer

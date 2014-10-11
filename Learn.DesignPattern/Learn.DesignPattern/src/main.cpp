@@ -6,6 +6,9 @@
 
 int main(int argc, char *argv[])
 {
+	SingleCoreA *s = new SingleCoreA();
+	s->foo();
+
 	FactoryTest();
 
 	StrategyTest();
